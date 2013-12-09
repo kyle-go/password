@@ -33,7 +33,9 @@
     [self.view sendSubviewToBack:self.backgroundImage];
     
     lockScreen = [[SPLockScreen alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.width)];
-    lockScreen.center = self.view.center;
+    CGPoint center = self.view.center;
+    center.y += 100;
+    lockScreen.center = center;
 	lockScreen.delegate = self;
 	lockScreen.backgroundColor = [UIColor clearColor];
 	[self.view addSubview:lockScreen];

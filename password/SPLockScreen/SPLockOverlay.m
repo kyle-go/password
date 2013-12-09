@@ -8,7 +8,7 @@
 
 #import "SPLockOverlay.h"
 
-#define kLineColor			[UIColor colorWithRed:255.0/255.0 green:252.0/255.0 blue:78.0/255.0 alpha:0.9]
+#define kLineColor      [UIColor colorWithRed:90.0/255.0 green:215.0/255.0 blue:255.0/255.0 alpha:0.6]
 #define kLineGridColor  [UIColor colorWithRed:255.0/255.0 green:252.0/255.0 blue:233.0/255.0 alpha:1.0]
 
 @implementation SPLockOverlay
@@ -30,7 +30,7 @@
 {
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	
-	CGFloat lineWidth = 5.0;
+	CGFloat lineWidth = 12.0;
 	
 	CGContextSetLineWidth(context, lineWidth);
 	CGContextSetStrokeColorWithColor(context, kLineColor.CGColor);

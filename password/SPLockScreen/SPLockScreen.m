@@ -10,20 +10,19 @@
 #import "NormalCircle.h"
 #import "SPLockOverlay.h"
 
-#define kSeed									23
-#define kAlterOne							1234
-#define kAlterTwo							4321
-#define kTagIdentifier				22222
+#define kSeed          23
+#define kAlterOne      1234
+#define kAlterTwo      4321
+#define kTagIdentifier 22222
 
 @interface SPLockScreen()
-@property (nonatomic, strong) NormalCircle *selectedCell;
-@property (nonatomic, strong) SPLockOverlay *overLay;
-@property (nonatomic) NSInteger oldCellIndex,currentCellIndex;
-@property (nonatomic, strong) NSMutableDictionary *drawnLines;
-@property (nonatomic, strong) NSMutableArray *finalLines, *cellsInOrder;
+@property (nonatomic, strong) NormalCircle          *selectedCell;
+@property (nonatomic, strong) SPLockOverlay         *overLay;
+@property (nonatomic, assign) NSInteger             oldCellIndex, currentCellIndex;
+@property (nonatomic, strong) NSMutableDictionary   *drawnLines;
+@property (nonatomic, strong) NSMutableArray        *finalLines, *cellsInOrder;
 
 - (void)resetScreen;
-
 @end
 
 @implementation SPLockScreen
@@ -53,9 +52,9 @@
 	frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width);
     self = [super initWithFrame:frame];
     if (self) {
-			[self setNeedsDisplay];
-			[self setUpTheScreen];
-			[self addGestureRecognizer];
+        [self setNeedsDisplay];
+        [self setUpTheScreen];
+        [self addGestureRecognizer];
     }
     return self;
 }
