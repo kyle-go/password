@@ -53,7 +53,7 @@
 		return;
 	
 	// For selected View
-	CGRect smallerRect = CGRectInset(rectToDraw,0, 0);
+	CGRect smallerRect = CGRectInset(rectToDraw, 1, 1);
 	CGContextSetFillColorWithColor(context, kHighlightColor.CGColor);
 	CGContextFillEllipseInRect(context, smallerRect);
 }
