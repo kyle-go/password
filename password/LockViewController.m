@@ -49,7 +49,7 @@
 #pragma comment --- LockScreenDelegate -----
 - (void)lockScreen:(SPLockScreen *)lockScreen didEndWithPattern:(NSNumber *)patternNumber
 {
-    NSLog(@"Lock is %d...", [patternNumber integerValue]);
+    NSLog(@"Lock is %ld...", [patternNumber longValue]);
 }
 
 @end

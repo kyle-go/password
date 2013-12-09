@@ -109,7 +109,7 @@
 					self.selectedCell = cell;
 				}
 				
-				int row = view.tag/kTagIdentifier - kSeed;
+				long row = view.tag/kTagIdentifier - kSeed;
 				int column = view.tag % kTagIdentifier - kSeed;
 				return row * 3 + column;
 			}
@@ -133,7 +133,7 @@
 
 - (NSNumber *) uniqueLineIdForLineJoiningPoint:(NSInteger)A AndPoint:(NSInteger)B
 {
-	return @(abs(A+B)*kAlterOne + abs(A-B)*kAlterTwo);
+	return @(abs((int)(A+B)*kAlterOne) + abs((int)(A-B)*kAlterTwo));
 }
 
 - (void)handlePanAtPoint:(CGPoint)point
@@ -186,7 +186,7 @@
 {
 	long finalNumber = 0;
 	long thisNum;
-	for(int i = self.cellsInOrder.count - 1 ; i >= 0 ; i--){
+	for(long i = self.cellsInOrder.count - 1 ; i >= 0 ; i--){
 		thisNum = ([[self.cellsInOrder objectAtIndex:i] integerValue] + 1) * pow(10, (self.cellsInOrder.count - i - 1));
 		finalNumber = finalNumber + thisNum;
 	}
