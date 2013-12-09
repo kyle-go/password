@@ -1,5 +1,5 @@
 //
-//  MainViewController.h
+//  LockViewController.h
 //  password
 //
 //  Created by kyle on 13-12-9.
@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SPLockScreen.h"
 
-@interface MainViewController : UIViewController
-
-- (IBAction)Lock:(id)sender;
+@interface LockViewController : UIViewController <LockScreenDelegate>
 
 @end

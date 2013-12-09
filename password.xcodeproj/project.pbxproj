@@ -17,10 +17,15 @@
 		FB87CBEC18557287003D6602 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB87CBEB18557287003D6602 /* XCTest.framework */; };
 		FB87CBED18557287003D6602 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB87CBD218557286003D6602 /* Foundation.framework */; };
 		FB87CBEE18557287003D6602 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB87CBD618557286003D6602 /* UIKit.framework */; };
-		FB87CBF618557287003D6602 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB87CBF418557287003D6602 /* InfoPlist.strings */; };
-		FB87CBF818557287003D6602 /* passwordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB87CBF718557287003D6602 /* passwordTests.m */; };
 		FB87CC04185572EE003D6602 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB87CC02185572EE003D6602 /* MainViewController.m */; };
 		FB87CC05185572EE003D6602 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB87CC03185572EE003D6602 /* MainViewController.xib */; };
+		FB87CC1D18559009003D6602 /* NormalCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = FB87CC1618559009003D6602 /* NormalCircle.m */; };
+		FB87CC1E18559009003D6602 /* SPLine.m in Sources */ = {isa = PBXBuildFile; fileRef = FB87CC1818559009003D6602 /* SPLine.m */; };
+		FB87CC1F18559009003D6602 /* SPLockOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = FB87CC1A18559009003D6602 /* SPLockOverlay.m */; };
+		FB87CC2018559009003D6602 /* SPLockScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = FB87CC1C18559009003D6602 /* SPLockScreen.m */; };
+		FB87CC24185590F1003D6602 /* LockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB87CC22185590F1003D6602 /* LockViewController.m */; };
+		FB87CC25185590F1003D6602 /* LockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB87CC23185590F1003D6602 /* LockViewController.xib */; };
+		FB87CC2A18559376003D6602 /* lockBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = FB87CC2918559376003D6602 /* lockBackground.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,12 +52,21 @@
 		FB87CBE418557286003D6602 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FB87CBEA18557287003D6602 /* passwordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = passwordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB87CBEB18557287003D6602 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		FB87CBF318557287003D6602 /* passwordTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "passwordTests-Info.plist"; sourceTree = "<group>"; };
-		FB87CBF518557287003D6602 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		FB87CBF718557287003D6602 /* passwordTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = passwordTests.m; sourceTree = "<group>"; };
 		FB87CC01185572EE003D6602 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		FB87CC02185572EE003D6602 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		FB87CC03185572EE003D6602 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		FB87CC1518559009003D6602 /* NormalCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalCircle.h; sourceTree = "<group>"; };
+		FB87CC1618559009003D6602 /* NormalCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalCircle.m; sourceTree = "<group>"; };
+		FB87CC1718559009003D6602 /* SPLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLine.h; sourceTree = "<group>"; };
+		FB87CC1818559009003D6602 /* SPLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLine.m; sourceTree = "<group>"; };
+		FB87CC1918559009003D6602 /* SPLockOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLockOverlay.h; sourceTree = "<group>"; };
+		FB87CC1A18559009003D6602 /* SPLockOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLockOverlay.m; sourceTree = "<group>"; };
+		FB87CC1B18559009003D6602 /* SPLockScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLockScreen.h; sourceTree = "<group>"; };
+		FB87CC1C18559009003D6602 /* SPLockScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLockScreen.m; sourceTree = "<group>"; };
+		FB87CC21185590F1003D6602 /* LockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LockViewController.h; sourceTree = "<group>"; };
+		FB87CC22185590F1003D6602 /* LockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LockViewController.m; sourceTree = "<group>"; };
+		FB87CC23185590F1003D6602 /* LockViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LockViewController.xib; sourceTree = "<group>"; };
+		FB87CC2918559376003D6602 /* lockBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lockBackground.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				FB87CBD818557286003D6602 /* password */,
-				FB87CBF118557287003D6602 /* passwordTests */,
 				FB87CBD118557286003D6602 /* Frameworks */,
 				FB87CBD018557286003D6602 /* Products */,
 			);
@@ -112,10 +125,15 @@
 		FB87CBD818557286003D6602 /* password */ = {
 			isa = PBXGroup;
 			children = (
+				FB87CC1318558FD9003D6602 /* extern */,
 				FB87CC01185572EE003D6602 /* MainViewController.h */,
 				FB87CC02185572EE003D6602 /* MainViewController.m */,
 				FB87CC03185572EE003D6602 /* MainViewController.xib */,
+				FB87CC21185590F1003D6602 /* LockViewController.h */,
+				FB87CC22185590F1003D6602 /* LockViewController.m */,
+				FB87CC23185590F1003D6602 /* LockViewController.xib */,
 				FB87CBE418557286003D6602 /* Images.xcassets */,
+				FB87CC26185591AF003D6602 /* resource */,
 				FB87CBD918557286003D6602 /* Supporting Files */,
 			);
 			path = password;
@@ -134,22 +152,37 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		FB87CBF118557287003D6602 /* passwordTests */ = {
+		FB87CC1318558FD9003D6602 /* extern */ = {
 			isa = PBXGroup;
 			children = (
-				FB87CBF718557287003D6602 /* passwordTests.m */,
-				FB87CBF218557287003D6602 /* Supporting Files */,
+				FB87CC1418559009003D6602 /* SPLockScreen */,
 			);
-			path = passwordTests;
+			name = extern;
+			path = ..;
 			sourceTree = "<group>";
 		};
-		FB87CBF218557287003D6602 /* Supporting Files */ = {
+		FB87CC1418559009003D6602 /* SPLockScreen */ = {
 			isa = PBXGroup;
 			children = (
-				FB87CBF318557287003D6602 /* passwordTests-Info.plist */,
-				FB87CBF418557287003D6602 /* InfoPlist.strings */,
+				FB87CC1518559009003D6602 /* NormalCircle.h */,
+				FB87CC1618559009003D6602 /* NormalCircle.m */,
+				FB87CC1718559009003D6602 /* SPLine.h */,
+				FB87CC1818559009003D6602 /* SPLine.m */,
+				FB87CC1918559009003D6602 /* SPLockOverlay.h */,
+				FB87CC1A18559009003D6602 /* SPLockOverlay.m */,
+				FB87CC1B18559009003D6602 /* SPLockScreen.h */,
+				FB87CC1C18559009003D6602 /* SPLockScreen.m */,
 			);
-			name = "Supporting Files";
+			name = SPLockScreen;
+			path = password/SPLockScreen;
+			sourceTree = "<group>";
+		};
+		FB87CC26185591AF003D6602 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				FB87CC2918559376003D6602 /* lockBackground.png */,
+			);
+			name = resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +263,8 @@
 				FB87CBDD18557286003D6602 /* InfoPlist.strings in Resources */,
 				FB87CC05185572EE003D6602 /* MainViewController.xib in Resources */,
 				FB87CBE518557286003D6602 /* Images.xcassets in Resources */,
+				FB87CC2A18559376003D6602 /* lockBackground.png in Resources */,
+				FB87CC25185590F1003D6602 /* LockViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,7 +272,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB87CBF618557287003D6602 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,9 +282,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB87CC1D18559009003D6602 /* NormalCircle.m in Sources */,
 				FB87CBE318557286003D6602 /* AppDelegate.m in Sources */,
 				FB87CC04185572EE003D6602 /* MainViewController.m in Sources */,
 				FB87CBDF18557286003D6602 /* main.m in Sources */,
+				FB87CC1F18559009003D6602 /* SPLockOverlay.m in Sources */,
+				FB87CC2018559009003D6602 /* SPLockScreen.m in Sources */,
+				FB87CC1E18559009003D6602 /* SPLine.m in Sources */,
+				FB87CC24185590F1003D6602 /* LockViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +297,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB87CBF818557287003D6602 /* passwordTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,14 +315,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				FB87CBDC18557286003D6602 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		FB87CBF418557287003D6602 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FB87CBF518557287003D6602 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
