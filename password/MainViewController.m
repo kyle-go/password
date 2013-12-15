@@ -8,8 +8,13 @@
 
 #import "MainViewController.h"
 #import "LockViewController.h"
+#import "SettingViewController.h"
+#import "NewAccountViewController.h"
+#import "AccountSummaryCell.h"
 
-@interface MainViewController ()
+@interface MainViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -19,7 +24,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showPasswordView) name:@"SHOW_PASSWORD_VIEW" object:nil];
     }
     return self;
 }
@@ -27,6 +32,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"所有账户(0)";
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonSystemItemAdd target:self action:@selector(addAccount)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:UIBarButtonSystemItemAction target:self action:@selector(settingView)];
+    
+    self.tableView.backgroundColor = [UIColor redColor];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,15 +45,44 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)showPasswordView
 {
     LockViewController *lockView = [[LockViewController alloc] init];
     [self presentViewController:lockView animated:NO completion:nil];
 }
 
-- (IBAction)Lock:(id)sender {
-    LockViewController *lockView = [[LockViewController alloc] init];
-    [self presentViewController:lockView animated:NO completion:nil];
+- (void)addAccount
+{
+    NewAccountViewController *accountView = [[NewAccountViewController alloc] init];
+    [self.navigationController pushViewController:accountView animated:YES];
+}
+
+- (void)settingView
+{
+    SettingViewController *settingView = [[SettingViewController alloc] init];
+    [self.navigationController pushViewController:settingView animated:YES];
+}
+
+#pragma mark --------- table view delegate -------------
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 4;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 75.0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *cellIdentify = @"tableViewCellIdentify";
+    AccountSummaryCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentify];
+    if (!cell) {
+        [tableView registerNib:[UINib nibWithNibName:@"AccountSummaryCell" bundle:nil] forCellReuseIdentifier:cellIdentify];
+        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentify];
+    }
+    return cell;
 }
 
 @end

@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2739E6F7185E0A230062AAF5 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2739E6F5185E0A230062AAF5 /* SettingViewController.m */; };
+		2739E6F8185E0A230062AAF5 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2739E6F6185E0A230062AAF5 /* SettingViewController.xib */; };
+		2739E700185E0C920062AAF5 /* AccountSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2739E6FF185E0C920062AAF5 /* AccountSummaryCell.m */; };
+		2739E702185E0CA10062AAF5 /* AccountSummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2739E701185E0CA10062AAF5 /* AccountSummaryCell.xib */; };
+		2739E704185E0F1B0062AAF5 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 2739E703185E0F1B0062AAF5 /* avatar.png */; };
+		2739E708185E10E40062AAF5 /* NewAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2739E706185E10E40062AAF5 /* NewAccountViewController.m */; };
+		2739E709185E10E40062AAF5 /* NewAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2739E707185E10E40062AAF5 /* NewAccountViewController.xib */; };
+		2739E70C185E17700062AAF5 /* ImageTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2739E70B185E17700062AAF5 /* ImageTextFieldCell.m */; };
+		2739E70E185E17820062AAF5 /* ImageTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2739E70D185E17820062AAF5 /* ImageTextFieldCell.xib */; };
+		2739E710185E17990062AAF5 /* LabelTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2739E70F185E17990062AAF5 /* LabelTextFieldCell.xib */; };
+		2739E713185E17AD0062AAF5 /* LabelTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2739E712185E17AD0062AAF5 /* LabelTextFieldCell.m */; };
 		FB87CBD318557286003D6602 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB87CBD218557286003D6602 /* Foundation.framework */; };
 		FB87CBD518557286003D6602 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB87CBD418557286003D6602 /* CoreGraphics.framework */; };
 		FB87CBD718557286003D6602 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB87CBD618557286003D6602 /* UIKit.framework */; };
@@ -39,6 +50,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2739E6F4185E0A230062AAF5 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		2739E6F5185E0A230062AAF5 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		2739E6F6185E0A230062AAF5 /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		2739E6FE185E0C920062AAF5 /* AccountSummaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountSummaryCell.h; sourceTree = "<group>"; };
+		2739E6FF185E0C920062AAF5 /* AccountSummaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountSummaryCell.m; sourceTree = "<group>"; };
+		2739E701185E0CA10062AAF5 /* AccountSummaryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountSummaryCell.xib; sourceTree = "<group>"; };
+		2739E703185E0F1B0062AAF5 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
+		2739E705185E10E40062AAF5 /* NewAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAccountViewController.h; sourceTree = "<group>"; };
+		2739E706185E10E40062AAF5 /* NewAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAccountViewController.m; sourceTree = "<group>"; };
+		2739E707185E10E40062AAF5 /* NewAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewAccountViewController.xib; sourceTree = "<group>"; };
+		2739E70A185E17700062AAF5 /* ImageTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTextFieldCell.h; sourceTree = "<group>"; };
+		2739E70B185E17700062AAF5 /* ImageTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTextFieldCell.m; sourceTree = "<group>"; };
+		2739E70D185E17820062AAF5 /* ImageTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageTextFieldCell.xib; sourceTree = "<group>"; };
+		2739E70F185E17990062AAF5 /* LabelTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelTextFieldCell.xib; sourceTree = "<group>"; };
+		2739E711185E17AD0062AAF5 /* LabelTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelTextFieldCell.h; sourceTree = "<group>"; };
+		2739E712185E17AD0062AAF5 /* LabelTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelTextFieldCell.m; sourceTree = "<group>"; };
 		FB87CBCF18557286003D6602 /* password.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = password.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB87CBD218557286003D6602 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FB87CBD418557286003D6602 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -93,6 +120,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2739E6F2185E09CD0062AAF5 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		2739E6F3185E09EA0062AAF5 /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				FB87CC01185572EE003D6602 /* MainViewController.h */,
+				FB87CC02185572EE003D6602 /* MainViewController.m */,
+				FB87CC03185572EE003D6602 /* MainViewController.xib */,
+				FB87CC21185590F1003D6602 /* LockViewController.h */,
+				FB87CC22185590F1003D6602 /* LockViewController.m */,
+				FB87CC23185590F1003D6602 /* LockViewController.xib */,
+				2739E705185E10E40062AAF5 /* NewAccountViewController.h */,
+				2739E706185E10E40062AAF5 /* NewAccountViewController.m */,
+				2739E707185E10E40062AAF5 /* NewAccountViewController.xib */,
+				2739E6F4185E0A230062AAF5 /* SettingViewController.h */,
+				2739E6F5185E0A230062AAF5 /* SettingViewController.m */,
+				2739E6F6185E0A230062AAF5 /* SettingViewController.xib */,
+				2739E6FE185E0C920062AAF5 /* AccountSummaryCell.h */,
+				2739E6FF185E0C920062AAF5 /* AccountSummaryCell.m */,
+				2739E701185E0CA10062AAF5 /* AccountSummaryCell.xib */,
+				2739E70A185E17700062AAF5 /* ImageTextFieldCell.h */,
+				2739E70B185E17700062AAF5 /* ImageTextFieldCell.m */,
+				2739E70D185E17820062AAF5 /* ImageTextFieldCell.xib */,
+				2739E711185E17AD0062AAF5 /* LabelTextFieldCell.h */,
+				2739E712185E17AD0062AAF5 /* LabelTextFieldCell.m */,
+				2739E70F185E17990062AAF5 /* LabelTextFieldCell.xib */,
+			);
+			name = VCs;
+			sourceTree = "<group>";
+		};
 		FB87CBC618557286003D6602 = {
 			isa = PBXGroup;
 			children = (
@@ -126,12 +188,8 @@
 			isa = PBXGroup;
 			children = (
 				FB87CC1318558FD9003D6602 /* extern */,
-				FB87CC01185572EE003D6602 /* MainViewController.h */,
-				FB87CC02185572EE003D6602 /* MainViewController.m */,
-				FB87CC03185572EE003D6602 /* MainViewController.xib */,
-				FB87CC21185590F1003D6602 /* LockViewController.h */,
-				FB87CC22185590F1003D6602 /* LockViewController.m */,
-				FB87CC23185590F1003D6602 /* LockViewController.xib */,
+				2739E6F3185E09EA0062AAF5 /* VCs */,
+				2739E6F2185E09CD0062AAF5 /* model */,
 				FB87CBE418557286003D6602 /* Images.xcassets */,
 				FB87CC26185591AF003D6602 /* resource */,
 				FB87CBD918557286003D6602 /* Supporting Files */,
@@ -180,6 +238,7 @@
 		FB87CC26185591AF003D6602 /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				2739E703185E0F1B0062AAF5 /* avatar.png */,
 				FB87CC2918559376003D6602 /* lockBackground.png */,
 			);
 			name = resource;
@@ -260,11 +319,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2739E704185E0F1B0062AAF5 /* avatar.png in Resources */,
 				FB87CBDD18557286003D6602 /* InfoPlist.strings in Resources */,
+				2739E702185E0CA10062AAF5 /* AccountSummaryCell.xib in Resources */,
+				2739E6F8185E0A230062AAF5 /* SettingViewController.xib in Resources */,
 				FB87CC05185572EE003D6602 /* MainViewController.xib in Resources */,
 				FB87CBE518557286003D6602 /* Images.xcassets in Resources */,
 				FB87CC2A18559376003D6602 /* lockBackground.png in Resources */,
+				2739E70E185E17820062AAF5 /* ImageTextFieldCell.xib in Resources */,
+				2739E710185E17990062AAF5 /* LabelTextFieldCell.xib in Resources */,
 				FB87CC25185590F1003D6602 /* LockViewController.xib in Resources */,
+				2739E709185E10E40062AAF5 /* NewAccountViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +352,12 @@
 				FB87CC04185572EE003D6602 /* MainViewController.m in Sources */,
 				FB87CBDF18557286003D6602 /* main.m in Sources */,
 				FB87CC1F18559009003D6602 /* SPLockOverlay.m in Sources */,
+				2739E6F7185E0A230062AAF5 /* SettingViewController.m in Sources */,
+				2739E708185E10E40062AAF5 /* NewAccountViewController.m in Sources */,
+				2739E70C185E17700062AAF5 /* ImageTextFieldCell.m in Sources */,
 				FB87CC2018559009003D6602 /* SPLockScreen.m in Sources */,
+				2739E700185E0C920062AAF5 /* AccountSummaryCell.m in Sources */,
+				2739E713185E17AD0062AAF5 /* LabelTextFieldCell.m in Sources */,
 				FB87CC1E18559009003D6602 /* SPLine.m in Sources */,
 				FB87CC24185590F1003D6602 /* LockViewController.m in Sources */,
 			);
