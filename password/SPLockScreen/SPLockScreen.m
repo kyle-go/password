@@ -141,7 +141,7 @@
 	NSInteger cellPos = [self indexForPoint:point];
 	
 	if(cellPos >=0 && cellPos != self.oldCellIndex) {
-        [self addCellsInOrderIfNotExist:self.oldCellIndex];
+        [self addCellsInOrderIfNotExist:self.currentCellIndex];
     }
 	
 	if(cellPos < 0 && self.oldCellIndex < 0) return;
@@ -184,12 +184,11 @@
 
 - (NSNumber *)patternToUniqueId
 {
-	long finalNumber = 0;
-	long thisNum;
-	for(long i = self.cellsInOrder.count - 1 ; i >= 0 ; i--){
-		thisNum = ([[self.cellsInOrder objectAtIndex:i] integerValue] + 1) * pow(10, (self.cellsInOrder.count - i - 1));
-		finalNumber += thisNum;
-	}
+	NSInteger finalNumber = 0;
+    for (NSNumber *item in self.cellsInOrder) {
+        finalNumber *= 10;
+        finalNumber += [item longValue] + 1;
+    }
 	return @(finalNumber);
 }
 
