@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SPLockScreen.h"
 
-@interface LockViewController : UIViewController <LockScreenDelegate>
+@interface LockViewController : UIViewController
 
 @end

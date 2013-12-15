@@ -60,7 +60,7 @@
 }
 
 - (void)setUpTheScreen{
-	CGFloat radius = 30.0;
+	CGFloat radius = 38.0;
 	CGFloat gap = (self.frame.size.width - 6 * radius )/4;
 	CGFloat topOffset = radius;
 	
@@ -69,7 +69,7 @@
 		int column =  i % 3;
 		int row    = i / 3;
 		CGFloat x = (gap + radius) + (gap + 2*radius)*column;
-		CGFloat y = (row * gap + row * 2 * radius) + topOffset;
+		CGFloat y = (row * gap + row * 2 * radius) + topOffset + 20;
 		circle.center = CGPointMake(x, y);
 		circle.tag = (row+kSeed)*kTagIdentifier + (column + kSeed);
 		[self addSubview:circle];
@@ -140,8 +140,9 @@
 	self.oldCellIndex = self.currentCellIndex;
 	NSInteger cellPos = [self indexForPoint:point];
 	
-	if(cellPos >=0 && cellPos != self.oldCellIndex)
-		[self.cellsInOrder addObject:@(self.currentCellIndex)];
+	if(cellPos >=0 && cellPos != self.oldCellIndex) {
+        [self addCellsInOrderIfNotExist:self.oldCellIndex];
+    }
 	
 	if(cellPos < 0 && self.oldCellIndex < 0) return;
 	
@@ -187,7 +188,7 @@
 	long thisNum;
 	for(long i = self.cellsInOrder.count - 1 ; i >= 0 ; i--){
 		thisNum = ([[self.cellsInOrder objectAtIndex:i] integerValue] + 1) * pow(10, (self.cellsInOrder.count - i - 1));
-		finalNumber = finalNumber + thisNum;
+		finalNumber += thisNum;
 	}
 	return @(finalNumber);
 }
@@ -225,18 +226,35 @@
 	CGPoint point = [gesture locationInView:self];
 	if([gesture isKindOfClass:[UIPanGestureRecognizer class]]){
 		if(gesture.state == UIGestureRecognizerStateEnded ) {
-			if(self.finalLines.count > 0)[self endPattern];
-			else [self resetScreen];
-		}
-		else [self handlePanAtPoint:point];
-	}
-	else {
+			if(self.finalLines.count > 0)
+                [self endPattern];
+			else
+                [self resetScreen];
+		} else {
+            [self handlePanAtPoint:point];
+        }
+	} else {
 		NSInteger cellPos = [self indexForPoint:point];
 		self.oldCellIndex = self.currentCellIndex;
 		if(cellPos >=0) {
-			[self.cellsInOrder addObject:@(self.currentCellIndex)];
+            [self addCellsInOrderIfNotExist:self.currentCellIndex];
 			[self performSelector:@selector(endPattern) withObject:nil afterDelay:0.3];
 		}
 	}
 }
+
+- (void)addCellsInOrderIfNotExist:(NSInteger) num
+{
+    BOOL alreadyExist = NO;
+    for (NSNumber *item in self.cellsInOrder) {
+        if ([item longValue] == num) {
+            alreadyExist = YES;
+            break;
+        }
+    }
+    if (!alreadyExist) {
+        [self.cellsInOrder addObject:@(num)];
+    }
+}
+
 @end

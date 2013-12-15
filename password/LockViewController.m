@@ -7,15 +7,16 @@
 //
 
 #import "LockViewController.h"
+#import "SPLockScreen.h"
 
-@interface LockViewController ()
+@interface LockViewController () <LockScreenDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 
 @end
 
 @implementation LockViewController {
-    SPLockScreen *lockScreen;
+    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -30,16 +31,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.view sendSubviewToBack:self.backgroundImage];
     
-    lockScreen = [[SPLockScreen alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.width)];
+    //lock screen view
+    SPLockScreen *lockScreen = [[SPLockScreen alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.width)];
     CGPoint center = self.view.center;
     center.y += 100;
     lockScreen.center = center;
 	lockScreen.delegate = self;
 	lockScreen.backgroundColor = [UIColor clearColor];
 	[self.view addSubview:lockScreen];
-    [self.view bringSubviewToFront:lockScreen];
 }
 
 - (void)didReceiveMemoryWarning
