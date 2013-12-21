@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		271C9DA7186553F300DB39C7 /* KTextViewPlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 271C9DA6186553F300DB39C7 /* KTextViewPlaceholder.m */; };
 		2739E6F7185E0A230062AAF5 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2739E6F5185E0A230062AAF5 /* SettingViewController.m */; };
 		2739E6F8185E0A230062AAF5 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2739E6F6185E0A230062AAF5 /* SettingViewController.xib */; };
 		2739E700185E0C920062AAF5 /* AccountSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2739E6FF185E0C920062AAF5 /* AccountSummaryCell.m */; };
@@ -18,6 +19,8 @@
 		2739E70E185E17820062AAF5 /* ImageTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2739E70D185E17820062AAF5 /* ImageTextFieldCell.xib */; };
 		2739E710185E17990062AAF5 /* LabelTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2739E70F185E17990062AAF5 /* LabelTextFieldCell.xib */; };
 		2739E713185E17AD0062AAF5 /* LabelTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2739E712185E17AD0062AAF5 /* LabelTextFieldCell.m */; };
+		27535E8D18654CB60079513C /* LabelTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27535E8C18654CB60079513C /* LabelTextViewCell.m */; };
+		27535E8F18654CC60079513C /* LabelTextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27535E8E18654CC60079513C /* LabelTextViewCell.xib */; };
 		FB87CBD318557286003D6602 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB87CBD218557286003D6602 /* Foundation.framework */; };
 		FB87CBD518557286003D6602 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB87CBD418557286003D6602 /* CoreGraphics.framework */; };
 		FB87CBD718557286003D6602 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB87CBD618557286003D6602 /* UIKit.framework */; };
@@ -50,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		271C9DA5186553F300DB39C7 /* KTextViewPlaceholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTextViewPlaceholder.h; sourceTree = "<group>"; };
+		271C9DA6186553F300DB39C7 /* KTextViewPlaceholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTextViewPlaceholder.m; sourceTree = "<group>"; };
 		2739E6F4185E0A230062AAF5 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		2739E6F5185E0A230062AAF5 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		2739E6F6185E0A230062AAF5 /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
@@ -66,6 +71,9 @@
 		2739E70F185E17990062AAF5 /* LabelTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelTextFieldCell.xib; sourceTree = "<group>"; };
 		2739E711185E17AD0062AAF5 /* LabelTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelTextFieldCell.h; sourceTree = "<group>"; };
 		2739E712185E17AD0062AAF5 /* LabelTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelTextFieldCell.m; sourceTree = "<group>"; };
+		27535E8B18654CB60079513C /* LabelTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelTextViewCell.h; sourceTree = "<group>"; };
+		27535E8C18654CB60079513C /* LabelTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelTextViewCell.m; sourceTree = "<group>"; };
+		27535E8E18654CC60079513C /* LabelTextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelTextViewCell.xib; sourceTree = "<group>"; };
 		FB87CBCF18557286003D6602 /* password.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = password.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB87CBD218557286003D6602 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FB87CBD418557286003D6602 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -120,6 +128,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		271C9DA4186553F300DB39C7 /* KTextViewPlaceholder */ = {
+			isa = PBXGroup;
+			children = (
+				271C9DA5186553F300DB39C7 /* KTextViewPlaceholder.h */,
+				271C9DA6186553F300DB39C7 /* KTextViewPlaceholder.m */,
+			);
+			name = KTextViewPlaceholder;
+			path = password/KTextViewPlaceholder;
+			sourceTree = "<group>";
+		};
 		2739E6F2185E09CD0062AAF5 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,21 +154,24 @@
 				FB87CC21185590F1003D6602 /* LockViewController.h */,
 				FB87CC22185590F1003D6602 /* LockViewController.m */,
 				FB87CC23185590F1003D6602 /* LockViewController.xib */,
-				2739E705185E10E40062AAF5 /* NewAccountViewController.h */,
-				2739E706185E10E40062AAF5 /* NewAccountViewController.m */,
-				2739E707185E10E40062AAF5 /* NewAccountViewController.xib */,
 				2739E6F4185E0A230062AAF5 /* SettingViewController.h */,
 				2739E6F5185E0A230062AAF5 /* SettingViewController.m */,
 				2739E6F6185E0A230062AAF5 /* SettingViewController.xib */,
 				2739E6FE185E0C920062AAF5 /* AccountSummaryCell.h */,
 				2739E6FF185E0C920062AAF5 /* AccountSummaryCell.m */,
 				2739E701185E0CA10062AAF5 /* AccountSummaryCell.xib */,
+				2739E705185E10E40062AAF5 /* NewAccountViewController.h */,
+				2739E706185E10E40062AAF5 /* NewAccountViewController.m */,
+				2739E707185E10E40062AAF5 /* NewAccountViewController.xib */,
 				2739E70A185E17700062AAF5 /* ImageTextFieldCell.h */,
 				2739E70B185E17700062AAF5 /* ImageTextFieldCell.m */,
 				2739E70D185E17820062AAF5 /* ImageTextFieldCell.xib */,
 				2739E711185E17AD0062AAF5 /* LabelTextFieldCell.h */,
 				2739E712185E17AD0062AAF5 /* LabelTextFieldCell.m */,
 				2739E70F185E17990062AAF5 /* LabelTextFieldCell.xib */,
+				27535E8B18654CB60079513C /* LabelTextViewCell.h */,
+				27535E8C18654CB60079513C /* LabelTextViewCell.m */,
+				27535E8E18654CC60079513C /* LabelTextViewCell.xib */,
 			);
 			name = VCs;
 			sourceTree = "<group>";
@@ -213,6 +234,7 @@
 		FB87CC1318558FD9003D6602 /* extern */ = {
 			isa = PBXGroup;
 			children = (
+				271C9DA4186553F300DB39C7 /* KTextViewPlaceholder */,
 				FB87CC1418559009003D6602 /* SPLockScreen */,
 			);
 			name = extern;
@@ -325,6 +347,7 @@
 				2739E6F8185E0A230062AAF5 /* SettingViewController.xib in Resources */,
 				FB87CC05185572EE003D6602 /* MainViewController.xib in Resources */,
 				FB87CBE518557286003D6602 /* Images.xcassets in Resources */,
+				27535E8F18654CC60079513C /* LabelTextViewCell.xib in Resources */,
 				FB87CC2A18559376003D6602 /* lockBackground.png in Resources */,
 				2739E70E185E17820062AAF5 /* ImageTextFieldCell.xib in Resources */,
 				2739E710185E17990062AAF5 /* LabelTextFieldCell.xib in Resources */,
@@ -351,8 +374,10 @@
 				FB87CBE318557286003D6602 /* AppDelegate.m in Sources */,
 				FB87CC04185572EE003D6602 /* MainViewController.m in Sources */,
 				FB87CBDF18557286003D6602 /* main.m in Sources */,
+				27535E8D18654CB60079513C /* LabelTextViewCell.m in Sources */,
 				FB87CC1F18559009003D6602 /* SPLockOverlay.m in Sources */,
 				2739E6F7185E0A230062AAF5 /* SettingViewController.m in Sources */,
+				271C9DA7186553F300DB39C7 /* KTextViewPlaceholder.m in Sources */,
 				2739E708185E10E40062AAF5 /* NewAccountViewController.m in Sources */,
 				2739E70C185E17700062AAF5 /* ImageTextFieldCell.m in Sources */,
 				FB87CC2018559009003D6602 /* SPLockScreen.m in Sources */,
