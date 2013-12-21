@@ -17,7 +17,10 @@
 @implementation SettingViewController {
     __weak UISwitch *_passwordProtect;
     __weak UISwitch *_dataProtect;
-    BOOL _isPasswordProjectAlertView;
+    
+    UIAlertView *_passwordProtectAlertView;
+    UIAlertView *_dataProtectAlertView;
+    UIAlertView *_cleanAppAlertView;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -50,6 +53,8 @@
         return 3;
     } else if (section == 1) {
         return 4;
+    } else if (section == 2) {
+        return 1;
     }
     
     return 0;
@@ -57,11 +62,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 3;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
+    if (section == 2) {
+        return 8.0;
+    }
     return 18.0;
 }
 
@@ -125,6 +133,15 @@
             default:
                 break;
         }
+    } else if (indexPath.section == 2) {
+        UIButton *cleanApp = [[UIButton alloc] initWithFrame:CGRectMake(20, 6, 280, 40)];
+        cleanApp.backgroundColor = [UIColor colorWithRed:222/255.0 green:70/255.0 blue:67/255.0 alpha:0.8];
+        [cleanApp setTitle:@"初始化应用" forState:UIControlStateNormal];
+        [cleanApp setTitleColor:[UIColor colorWithWhite:1.0 alpha:0.6] forState:UIControlStateHighlighted];
+        [cleanApp addTarget:self action:@selector(cleanApp) forControlEvents:UIControlEventTouchUpInside];
+        
+        [cell.contentView addSubview:cleanApp];
+        cell.backgroundColor = globalBackgroundColor;
     }
     
     return cell;
@@ -137,26 +154,31 @@
     return nil;
 }
 
+- (void)cleanApp
+{
+    _cleanAppAlertView = [[UIAlertView alloc] initWithTitle:@"警告" message:@"确定初始化应用吗？ 该操作将清除您的所有数据！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
+    [_cleanAppAlertView show];
+    
+}
+
 - (void)switchChanged:(id)sender
 {
     if (sender == _passwordProtect) {
         if (_passwordProtect.on == NO) {
-            _isPasswordProjectAlertView = YES;
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"警告" message:@"确定取消本地口令吗?唤醒应用不再需要密码!" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
-            [alert show];
+            _passwordProtectAlertView = [[UIAlertView alloc] initWithTitle:@"警告" message:@"确定取消本地口令吗? 唤醒应用不再需要密码!" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
+            [_passwordProtectAlertView show];
         }
     } else if(sender == _dataProtect) {
         if (_dataProtect.on == YES) {
-            _isPasswordProjectAlertView = NO;
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"警告" message:@"确定开启数据保护功能吗?本地口令连续认证错误10次销毁全部数据!" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
-            [alert show];
+            _dataProtectAlertView = [[UIAlertView alloc] initWithTitle:@"警告" message:@"确定开启数据保护功能吗? 本地口令连续认证错误10次销毁全部数据!" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
+            [_passwordProtectAlertView show];
         }
     }
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (_isPasswordProjectAlertView) {
+    if (alertView == _passwordProtectAlertView) {
         switch (buttonIndex) {
                 //确定
             case 0:
@@ -168,7 +190,7 @@
             default:
                 break;
         }
-    } else {
+    } else if (alertView == _dataProtectAlertView){
         switch (buttonIndex) {
                 //确定
             case 0:
@@ -176,6 +198,17 @@
                 //取消
             case 1:
                 _dataProtect.on = NO;
+                break;
+            default:
+                break;
+        }
+    } else if (alertView == _cleanAppAlertView) {
+        switch (buttonIndex) {
+                //确定
+            case 0:
+                break;
+                //取消
+            case 1://
                 break;
             default:
                 break;
