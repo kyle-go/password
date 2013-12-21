@@ -8,19 +8,23 @@
 
 #import "SettingViewController.h"
 
-@interface SettingViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface SettingViewController () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
-@implementation SettingViewController
+@implementation SettingViewController {
+    __weak UISwitch *_passwordProtect;
+    __weak UISwitch *_dataProtect;
+    BOOL _isPasswordProjectAlertView;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        //
     }
     return self;
 }
@@ -80,14 +84,18 @@
     if (indexPath.section == 0) {
         switch (indexPath.row) {
             case 0:
-                cell.textLabel.text = @"密码保护";
+                cell.textLabel.text = @"本地口令";
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
                 [cell.contentView addSubview:sw];
+                _passwordProtect = sw;
+                [sw addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
                 break;
             case 1:
                 cell.textLabel.text = @"数据保护";
                 [cell.contentView addSubview:sw];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                _dataProtect = sw;
+                [sw addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
                 break;
             case 2:
                 cell.textLabel.text = @"修改密码";
@@ -116,9 +124,55 @@
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ss" message:@"tt" delegate:nil cancelButtonTitle:@"fdfdf" otherButtonTitles:nil];
-    [alert show];
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ss" message:@"tt" delegate:nil cancelButtonTitle:@"fdfdf" otherButtonTitles:nil];
+//    [alert show];
     return nil;
+}
+
+- (void)switchChanged:(id)sender
+{
+    if (sender == _passwordProtect) {
+        if (_passwordProtect.on == NO) {
+            _isPasswordProjectAlertView = YES;
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"警告" message:@"确定取消本地口令吗?唤醒应用不再需要密码!" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
+            [alert show];
+        }
+    } else if(sender == _dataProtect) {
+        if (_dataProtect.on == YES) {
+            _isPasswordProjectAlertView = NO;
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"警告" message:@"确定开启数据保护功能吗?本地口令连续认证错误10次销毁全部数据!" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
+            [alert show];
+        }
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (_isPasswordProjectAlertView) {
+        switch (buttonIndex) {
+                //确定
+            case 0:
+                break;
+                //取消
+            case 1:
+                _passwordProtect.on = YES;
+                break;
+            default:
+                break;
+        }
+    } else {
+        switch (buttonIndex) {
+                //确定
+            case 0:
+                break;
+                //取消
+            case 1:
+                _dataProtect.on = NO;
+                break;
+            default:
+                break;
+        }
+    }
 }
 
 @end
