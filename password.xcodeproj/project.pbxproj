@@ -27,6 +27,7 @@
 		2756A3321865ED370030941C /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2756A32C1865ED370030941C /* FMDatabaseQueue.m */; };
 		2756A3331865ED370030941C /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2756A32E1865ED370030941C /* FMResultSet.m */; };
 		2756A3351865F4320030941C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2756A3341865F4320030941C /* libsqlite3.dylib */; };
+		2767199D1866154100867197 /* Storage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2767199C1866154100867197 /* Storage.m */; };
 		FB87CBD318557286003D6602 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB87CBD218557286003D6602 /* Foundation.framework */; };
 		FB87CBD518557286003D6602 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB87CBD418557286003D6602 /* CoreGraphics.framework */; };
 		FB87CBD718557286003D6602 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB87CBD618557286003D6602 /* UIKit.framework */; };
@@ -91,6 +92,8 @@
 		2756A32D1865ED370030941C /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		2756A32E1865ED370030941C /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		2756A3341865F4320030941C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		2767199B1866154100867197 /* Storage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Storage.h; sourceTree = "<group>"; };
+		2767199C1866154100867197 /* Storage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Storage.m; sourceTree = "<group>"; };
 		FB87CBCF18557286003D6602 /* password.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = password.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB87CBD218557286003D6602 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FB87CBD418557286003D6602 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -159,6 +162,8 @@
 		2739E6F2185E09CD0062AAF5 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				2767199B1866154100867197 /* Storage.h */,
+				2767199C1866154100867197 /* Storage.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -428,6 +433,7 @@
 				FB87CC1E18559009003D6602 /* SPLine.m in Sources */,
 				FB87CC24185590F1003D6602 /* LockViewController.m in Sources */,
 				2756A32F1865ED370030941C /* FMDatabase.m in Sources */,
+				2767199D1866154100867197 /* Storage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
