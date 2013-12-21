@@ -49,7 +49,7 @@
     if (section == 0) {
         return 3;
     } else if (section == 1) {
-        return 2;
+        return 4;
     }
     
     return 0;
@@ -111,7 +111,15 @@
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 break;
             case 1:
-                cell.textLabel.text = @"关于我们";
+                cell.textLabel.text = @"分享给小伙伴";
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                break;
+            case 2:
+                cell.textLabel.text = @"建议反馈";
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                break;
+            case 3:
+                cell.textLabel.text = @"关于";
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 break;
             default:
