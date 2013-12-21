@@ -8,7 +8,9 @@
 
 #import "SettingViewController.h"
 
-@interface SettingViewController ()
+@interface SettingViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -26,13 +28,96 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.tableView.separatorColor = [UIColor colorWithRed:229/255.0 green:229/255.0 blue:229/255.0 alpha:0.8];
+    self.tableView.backgroundColor = [UIColor colorWithRed:229/255.0 green:229/255.0 blue:229/255.0 alpha:0.8];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark --------- table view delegate -------------
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return 3;
+    } else if (section == 1) {
+        return 2;
+    }
+    
+    return 0;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 18.0;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 0.01;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *cellIdentify = @"commonTableViewCellIdentify";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentify];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentify];
+    }
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    UISwitch *sw = [[UISwitch alloc] initWithFrame:CGRectMake(258, 6, 100, 40)];
+    
+    if (indexPath.section == 0) {
+        switch (indexPath.row) {
+            case 0:
+                cell.textLabel.text = @"密码保护";
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                [cell.contentView addSubview:sw];
+                break;
+            case 1:
+                cell.textLabel.text = @"数据保护";
+                [cell.contentView addSubview:sw];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                break;
+            case 2:
+                cell.textLabel.text = @"修改密码";
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                break;
+            default:
+                break;
+        }
+    } else if (indexPath.section == 1) {
+        switch (indexPath.row) {
+            case 0:
+                cell.textLabel.text = @"去评分";
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                break;
+            case 1:
+                cell.textLabel.text = @"关于我们";
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                break;
+            default:
+                break;
+        }
+    }
+    
+    return cell;
+}
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ss" message:@"tt" delegate:nil cancelButtonTitle:@"fdfdf" otherButtonTitles:nil];
+    [alert show];
+    return nil;
 }
 
 @end

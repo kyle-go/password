@@ -40,8 +40,7 @@
     self.title = @"新账户";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonSystemItemAction target:self action:@selector(save)];
     
-    UIColor *color = [UIColor colorWithRed:229/255.0 green:229/255.0 blue:229/255.0 alpha:0.8];
-    self.tableView.backgroundColor = color;
+    self.tableView.backgroundColor = [UIColor colorWithRed:229/255.0 green:229/255.0 blue:229/255.0 alpha:0.8];
 }
 
 - (void)didReceiveMemoryWarning
@@ -122,9 +121,7 @@
         [cell setKeyboardCompletion:^{[_account becomeFirstResponder];}];
         return cell;
     }
-    //账号
-    //密码
-    //网址
+    //账号，密码，网址
     if (indexPath.row >= 1 && indexPath.row <= 3) {
         NSString *cellIdentify = @"LabelTextFieldCellIdentify";
         LabelTextFieldCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentify];

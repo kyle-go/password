@@ -21,6 +21,12 @@
 		2739E713185E17AD0062AAF5 /* LabelTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2739E712185E17AD0062AAF5 /* LabelTextFieldCell.m */; };
 		27535E8D18654CB60079513C /* LabelTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27535E8C18654CB60079513C /* LabelTextViewCell.m */; };
 		27535E8F18654CC60079513C /* LabelTextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27535E8E18654CC60079513C /* LabelTextViewCell.xib */; };
+		2756A32F1865ED370030941C /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2756A3261865ED370030941C /* FMDatabase.m */; };
+		2756A3301865ED370030941C /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2756A3281865ED370030941C /* FMDatabaseAdditions.m */; };
+		2756A3311865ED370030941C /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2756A32A1865ED370030941C /* FMDatabasePool.m */; };
+		2756A3321865ED370030941C /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2756A32C1865ED370030941C /* FMDatabaseQueue.m */; };
+		2756A3331865ED370030941C /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2756A32E1865ED370030941C /* FMResultSet.m */; };
+		2756A3351865F4320030941C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2756A3341865F4320030941C /* libsqlite3.dylib */; };
 		FB87CBD318557286003D6602 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB87CBD218557286003D6602 /* Foundation.framework */; };
 		FB87CBD518557286003D6602 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB87CBD418557286003D6602 /* CoreGraphics.framework */; };
 		FB87CBD718557286003D6602 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB87CBD618557286003D6602 /* UIKit.framework */; };
@@ -74,6 +80,17 @@
 		27535E8B18654CB60079513C /* LabelTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelTextViewCell.h; sourceTree = "<group>"; };
 		27535E8C18654CB60079513C /* LabelTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelTextViewCell.m; sourceTree = "<group>"; };
 		27535E8E18654CC60079513C /* LabelTextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelTextViewCell.xib; sourceTree = "<group>"; };
+		2756A3251865ED370030941C /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		2756A3261865ED370030941C /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		2756A3271865ED370030941C /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		2756A3281865ED370030941C /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		2756A3291865ED370030941C /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		2756A32A1865ED370030941C /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		2756A32B1865ED370030941C /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		2756A32C1865ED370030941C /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		2756A32D1865ED370030941C /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		2756A32E1865ED370030941C /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		2756A3341865F4320030941C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		FB87CBCF18557286003D6602 /* password.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = password.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB87CBD218557286003D6602 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FB87CBD418557286003D6602 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -109,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2756A3351865F4320030941C /* libsqlite3.dylib in Frameworks */,
 				FB87CBD518557286003D6602 /* CoreGraphics.framework in Frameworks */,
 				FB87CBD718557286003D6602 /* UIKit.framework in Frameworks */,
 				FB87CBD318557286003D6602 /* Foundation.framework in Frameworks */,
@@ -176,6 +194,24 @@
 			name = VCs;
 			sourceTree = "<group>";
 		};
+		2756A3241865ED370030941C /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				2756A3251865ED370030941C /* FMDatabase.h */,
+				2756A3261865ED370030941C /* FMDatabase.m */,
+				2756A3271865ED370030941C /* FMDatabaseAdditions.h */,
+				2756A3281865ED370030941C /* FMDatabaseAdditions.m */,
+				2756A3291865ED370030941C /* FMDatabasePool.h */,
+				2756A32A1865ED370030941C /* FMDatabasePool.m */,
+				2756A32B1865ED370030941C /* FMDatabaseQueue.h */,
+				2756A32C1865ED370030941C /* FMDatabaseQueue.m */,
+				2756A32D1865ED370030941C /* FMResultSet.h */,
+				2756A32E1865ED370030941C /* FMResultSet.m */,
+			);
+			name = fmdb;
+			path = password/fmdb;
+			sourceTree = "<group>";
+		};
 		FB87CBC618557286003D6602 = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +233,7 @@
 		FB87CBD118557286003D6602 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2756A3341865F4320030941C /* libsqlite3.dylib */,
 				FB87CBD218557286003D6602 /* Foundation.framework */,
 				FB87CBD418557286003D6602 /* CoreGraphics.framework */,
 				FB87CBD618557286003D6602 /* UIKit.framework */,
@@ -234,6 +271,7 @@
 		FB87CC1318558FD9003D6602 /* extern */ = {
 			isa = PBXGroup;
 			children = (
+				2756A3241865ED370030941C /* fmdb */,
 				271C9DA4186553F300DB39C7 /* KTextViewPlaceholder */,
 				FB87CC1418559009003D6602 /* SPLockScreen */,
 			);
@@ -374,17 +412,22 @@
 				FB87CBE318557286003D6602 /* AppDelegate.m in Sources */,
 				FB87CC04185572EE003D6602 /* MainViewController.m in Sources */,
 				FB87CBDF18557286003D6602 /* main.m in Sources */,
+				2756A3301865ED370030941C /* FMDatabaseAdditions.m in Sources */,
 				27535E8D18654CB60079513C /* LabelTextViewCell.m in Sources */,
 				FB87CC1F18559009003D6602 /* SPLockOverlay.m in Sources */,
 				2739E6F7185E0A230062AAF5 /* SettingViewController.m in Sources */,
 				271C9DA7186553F300DB39C7 /* KTextViewPlaceholder.m in Sources */,
+				2756A3321865ED370030941C /* FMDatabaseQueue.m in Sources */,
 				2739E708185E10E40062AAF5 /* NewAccountViewController.m in Sources */,
 				2739E70C185E17700062AAF5 /* ImageTextFieldCell.m in Sources */,
 				FB87CC2018559009003D6602 /* SPLockScreen.m in Sources */,
 				2739E700185E0C920062AAF5 /* AccountSummaryCell.m in Sources */,
+				2756A3331865ED370030941C /* FMResultSet.m in Sources */,
+				2756A3311865ED370030941C /* FMDatabasePool.m in Sources */,
 				2739E713185E17AD0062AAF5 /* LabelTextFieldCell.m in Sources */,
 				FB87CC1E18559009003D6602 /* SPLine.m in Sources */,
 				FB87CC24185590F1003D6602 /* LockViewController.m in Sources */,
+				2756A32F1865ED370030941C /* FMDatabase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
