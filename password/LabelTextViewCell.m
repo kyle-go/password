@@ -8,7 +8,9 @@
 
 #import "LabelTextViewCell.h"
 
-@implementation LabelTextViewCell
+@implementation LabelTextViewCell {
+    void (^_completion)();
+}
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -22,6 +24,11 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
+}
+
+- (void)setKeyboardCompletion:(void(^)())completion
+{
+    _completion = completion;
 }
 
 @end

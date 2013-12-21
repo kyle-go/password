@@ -8,13 +8,15 @@
 
 #import "LabelTextFieldCell.h"
 
-@implementation LabelTextFieldCell
+@implementation LabelTextFieldCell {
+    void (^_completion)();
+}
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
+        _completion = ^{};
     }
     return self;
 }
@@ -24,6 +26,15 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (IBAction)keyboardNext:(id)sender {
+    _completion();
+}
+
+- (void)setKeyboardCompletion:(void(^)())completion
+{
+    _completion = completion;
 }
 
 @end

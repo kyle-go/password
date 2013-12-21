@@ -11,6 +11,7 @@
 
 @interface LabelTextViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet KTextViewPlaceholder *textView;
+@property (weak, nonatomic) IBOutlet KTextViewPlaceholder *placeholderTextView;
+- (void)setKeyboardCompletion:(void(^)())completion;
 
 @end

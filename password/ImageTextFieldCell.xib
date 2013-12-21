@@ -20,8 +20,11 @@
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="名称" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GYj-wT-A9u">
                         <rect key="frame" x="76" y="22" width="240" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                        <textInputTraits key="textInputTraits"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                        <connections>
+                            <action selector="keyboardNext:" destination="km1-XF-jDZ" eventType="editingDidEndOnExit" id="ZIY-u3-ZaK"/>
+                        </connections>
                     </textField>
                 </subviews>
             </tableViewCellContentView>

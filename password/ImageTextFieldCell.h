@@ -10,4 +10,6 @@
 
 @interface ImageTextFieldCell : UITableViewCell
 
+- (void)setKeyboardCompletion:(void(^)())completion;
+
 @end
