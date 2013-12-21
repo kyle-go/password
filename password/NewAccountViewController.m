@@ -40,7 +40,8 @@
     self.title = @"新账户";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonSystemItemAction target:self action:@selector(save)];
     
-    self.tableView.backgroundColor = [UIColor colorWithRed:229/255.0 green:229/255.0 blue:229/255.0 alpha:0.8];
+    self.tableView.separatorColor = globalBackgroundColor;
+    self.tableView.backgroundColor = globalBackgroundColor;
 }
 
 - (void)didReceiveMemoryWarning
@@ -86,7 +87,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 12.0;
+    return 18.0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section

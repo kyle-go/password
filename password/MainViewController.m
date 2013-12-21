@@ -36,7 +36,7 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonSystemItemAdd target:self action:@selector(addAccount)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:UIBarButtonSystemItemAction target:self action:@selector(settingView)];
     
-    self.tableView.backgroundColor = [UIColor colorWithRed:229/255.0 green:229/255.0 blue:229/255.0 alpha:0.8];;
+    self.tableView.backgroundColor = globalBackgroundColor;
 }
 
 - (void)didReceiveMemoryWarning

@@ -28,8 +28,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tableView.separatorColor = [UIColor colorWithRed:229/255.0 green:229/255.0 blue:229/255.0 alpha:0.8];
-    self.tableView.backgroundColor = [UIColor colorWithRed:229/255.0 green:229/255.0 blue:229/255.0 alpha:0.8];
+    
+    self.tableView.separatorColor = globalBackgroundColor;
+    self.tableView.backgroundColor = globalBackgroundColor;
 }
 
 - (void)didReceiveMemoryWarning
