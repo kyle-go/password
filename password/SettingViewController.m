@@ -215,7 +215,7 @@
                 break;
                 //取消
             case 1:
-                [_dataProtect setOn:YES animated:YES];
+                [_dataProtect setOn:NO animated:YES];
                 break;
             default:
                 break;
