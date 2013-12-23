@@ -78,6 +78,14 @@
     return 0.01;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 2) {
+        return 50;
+    }
+    return 44;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *cellIdentify = @"commonTableViewCellIdentify";
@@ -88,22 +96,27 @@
     
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
     UISwitch *sw = [[UISwitch alloc] initWithFrame:CGRectMake(258, 6, 100, 40)];
+    sw.tag = 'swch';
     
     if (indexPath.section == 0) {
         switch (indexPath.row) {
             case 0:
                 cell.textLabel.text = @"本地口令";
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
-                [cell.contentView addSubview:sw];
-                _passwordProtect = sw;
-                [sw addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
+                if (![cell viewWithTag:'swch']) {
+                    [cell.contentView addSubview:sw];
+                    _passwordProtect = sw;
+                    [sw addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
+                }
                 break;
             case 1:
                 cell.textLabel.text = @"数据保护";
-                [cell.contentView addSubview:sw];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
-                _dataProtect = sw;
-                [sw addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
+                if (![cell viewWithTag:'swch']) {
+                    [cell.contentView addSubview:sw];
+                    _dataProtect = sw;
+                    [sw addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
+                }
                 break;
             case 2:
                 cell.textLabel.text = @"修改密码";
@@ -134,10 +147,10 @@
                 break;
         }
     } else if (indexPath.section == 2) {
-        UIButton *cleanApp = [[UIButton alloc] initWithFrame:CGRectMake(20, 6, 280, 40)];
+        UIButton *cleanApp = [[UIButton alloc] initWithFrame:CGRectMake(20, 6, 280, 45)];
         cleanApp.backgroundColor = [UIColor colorWithRed:222/255.0 green:70/255.0 blue:67/255.0 alpha:0.8];
         [cleanApp setTitle:@"初始化应用" forState:UIControlStateNormal];
-        [cleanApp setTitleColor:[UIColor colorWithWhite:1.0 alpha:0.6] forState:UIControlStateHighlighted];
+        [cleanApp setTitleColor:[UIColor colorWithWhite:1.0 alpha:0.5] forState:UIControlStateHighlighted];
         [cleanApp addTarget:self action:@selector(cleanApp) forControlEvents:UIControlEventTouchUpInside];
         
         [cell.contentView addSubview:cleanApp];
@@ -185,7 +198,7 @@
                 break;
                 //取消
             case 1:
-                _passwordProtect.on = YES;
+                [_passwordProtect setOn:YES animated:YES];
                 break;
             default:
                 break;
@@ -197,7 +210,7 @@
                 break;
                 //取消
             case 1:
-                _dataProtect.on = NO;
+                [_dataProtect setOn:YES animated:YES];
                 break;
             default:
                 break;
