@@ -52,6 +52,10 @@
 - (void)lockScreen:(SPLockScreen *)lockScreen didEndWithPattern:(NSNumber *)patternNumber
 {
     NSLog(@"Lock is %ld...", [patternNumber longValue]);
+    if (4253 == [patternNumber longValue]) {
+        self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 @end
