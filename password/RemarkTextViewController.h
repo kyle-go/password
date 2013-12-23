@@ -17,5 +17,6 @@
 @interface RemarkTextViewController : UIViewController
 
 @property (nonatomic, weak) id <RemarkTextViewDelegate> delegate;
+@property (nonatomic, strong) NSString *text;
 
 @end

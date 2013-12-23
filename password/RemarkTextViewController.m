@@ -37,9 +37,14 @@
     self.textView.layer.borderColor = [UIColor grayColor].CGColor;
     self.textView.layer.borderWidth = 1.0;
     self.textView.layer.cornerRadius = 6.0;
+    self.textView.text = self.text;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonSystemItemAction target:self action:@selector(save)];
     
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
     [self.textView becomeFirstResponder];
 }
 

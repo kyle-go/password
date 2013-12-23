@@ -13,7 +13,7 @@
 #import "AccountItem.h"
 #import "KUnits.h"
 
-@interface EditAccountViewController () <UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface EditAccountViewController () <UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, RemarkTextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -56,10 +56,14 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    //new account
     if (!_accountItem) {
         _accountItem = [[AccountItem alloc] init];
         _accountItem.itemId = [KUnits generateUuidString];
         _accountItem.avatar = [PATH_OF_DOCUMENT stringByAppendingString: [NSString stringWithFormat:@"/Media/%@.png", _accountItem.itemId]];
+    //edit account
+    } else {
+        //
     }
 }
 
@@ -106,6 +110,32 @@
 {
     //section 1
     if (indexPath.section == 1) {
+        switch (indexPath.row) {
+            case 0:
+            {
+                if (_accountItem.remark.length == 0) {
+                    return 44.0;
+                }
+                
+                UILabel *text = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 288, 1)];
+                text.numberOfLines = 0;
+                text.textAlignment = NSTextAlignmentLeft;
+                text.lineBreakMode = NSLineBreakByWordWrapping;
+                text.font = [UIFont systemFontOfSize:14.0];
+                text.text = _accountItem.remark;
+                
+                [text sizeToFit];
+                return text.frame.size.height + 28;
+            }
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            default:
+                break;
+        }
+        
         return 44.0;
     }
     
@@ -149,7 +179,29 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         switch (indexPath.row) {
             case 0:
-                cell.textLabel.text = @"添加文本";
+                if (_accountItem.remark.length == 0) {
+                    cell.textLabel.text = @"添加文本";
+                } else {
+                    cell.textLabel.text = nil;
+                    if ([cell.contentView viewWithTag:'mark']) {
+                        UILabel *text = (UILabel *)[cell.contentView viewWithTag:'mark'];
+                        text.text = _accountItem.remark;
+                        [text sizeToFit];
+                    } else {
+                        UILabel *text = [[UILabel alloc] initWithFrame:CGRectMake(8, 14, 288, 1)];
+                        text.numberOfLines = 0;
+                        text.textAlignment = NSTextAlignmentLeft;
+                        text.lineBreakMode = NSLineBreakByWordWrapping;
+                        text.font = [UIFont systemFontOfSize:14.0];
+                        text.text = _accountItem.remark;
+                        
+                        text.textColor = [UIColor darkGrayColor];
+                        text.tag = 'mark';
+                        [cell.contentView addSubview:text];
+                        [text sizeToFit];
+                    }
+                }
+                
                 break;
             case 1:
                 cell.textLabel.text = @"添加图片";
@@ -231,6 +283,8 @@
                 //文本
             {
                 RemarkTextViewController *remarkView = [[RemarkTextViewController alloc] init];
+                remarkView.text = _accountItem.remark;
+                remarkView.delegate = self;
                  [self.navigationController pushViewController:remarkView animated:YES];
             }
                 break;
@@ -313,6 +367,12 @@
 - (void)EditAccountItem:(AccountItem *)item
 {
     _accountItem = item;
+}
+
+#pragma remark --- RemarkTextViewDelegate -----
+- (void)remarkText:(NSString *)text {
+    _accountItem.remark = text;
+    [self.tableView reloadData];
 }
 
 @end
