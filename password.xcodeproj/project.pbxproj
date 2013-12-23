@@ -714,7 +714,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/password/KSharedSDK/Core/WeChatSDK_1.4.2.1",
-					/Users/shannon/Desktop/password/password/KSharedSDK/Core/WeChatSDK_1.4.2.1,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -732,7 +731,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/password/KSharedSDK/Core/WeChatSDK_1.4.2.1",
-					/Users/shannon/Desktop/password/password/KSharedSDK/Core/WeChatSDK_1.4.2.1,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

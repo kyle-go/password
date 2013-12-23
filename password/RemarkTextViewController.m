@@ -38,9 +38,8 @@
     self.textView.layer.borderWidth = 1.0;
     self.textView.layer.cornerRadius = 6.0;
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonSystemItemAction target:self action:@selector(save)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonSystemItemAction target:self action:@selector(save)];
     
-    //self.navigationItem.leftBarButtonItem
     [self.textView becomeFirstResponder];
 }
 
@@ -66,10 +65,6 @@
 
 - (void)save
 {
-    if (self.textView.text.length == 0) {
-        return;
-    }
-    
     if ([self.textView.text length] > 240) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"太长了!不能超过240个字哦！" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
         [alert show];
