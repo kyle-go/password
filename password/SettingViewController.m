@@ -184,7 +184,7 @@
     } else if(sender == _dataProtect) {
         if (_dataProtect.on == YES) {
             _dataProtectAlertView = [[UIAlertView alloc] initWithTitle:@"警告" message:@"确定开启数据保护功能吗? 本地口令连续认证错误10次销毁全部数据!" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
-            [_passwordProtectAlertView show];
+            [_dataProtectAlertView show];
         }
     }
 }
