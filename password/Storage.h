@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class AccountItem;
 @interface Storage : NSObject
 
 + (instancetype)Instance;
+
+- (void)updateAccountItem:(AccountItem *)item;
+- (void)deleteAccountItem:(NSString *)itemId;
 
 @end
