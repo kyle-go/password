@@ -7,6 +7,7 @@
 //
 
 #import "SettingViewController.h"
+#include "KShareViewManage.h"
 
 @interface SettingViewController () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
@@ -162,8 +163,12 @@
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ss" message:@"tt" delegate:nil cancelButtonTitle:@"fdfdf" otherButtonTitles:nil];
-//    [alert show];
+    //分享到小伙伴
+    if (indexPath.section == 1 && indexPath.row == 1) {
+        NSArray * array = [KShareViewManage getShareListWithType:SharedType_SinaWeibo, SharedType_WeChatCircel, SharedType_WeChatFriend, SharedType_TencentWeibo, SharedType_QQChat, nil];
+        [KShareViewManage showViewToShareText:@"我发现了一个好玩的应用，从此妈妈再也不担心我记不住密码啦！" platform:array inViewController:self];
+    }
+
     return nil;
 }
 
@@ -184,7 +189,7 @@
     } else if(sender == _dataProtect) {
         if (_dataProtect.on == YES) {
             _dataProtectAlertView = [[UIAlertView alloc] initWithTitle:@"警告" message:@"确定开启数据保护功能吗? 本地口令连续认证错误10次销毁全部数据!" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
-            [_passwordProtectAlertView show];
+            [_dataProtectAlertView show];
         }
     }
 }
