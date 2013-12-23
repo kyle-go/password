@@ -13,6 +13,7 @@
 
 + (instancetype)Instance;
 
+- (NSArray *)getAccountItems;
 - (void)updateAccountItem:(AccountItem *)item;
 - (void)deleteAccountItem:(NSString *)itemId;
 

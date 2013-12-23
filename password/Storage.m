@@ -56,6 +56,20 @@
     return self;
 }
 
+- (NSArray *)getAccountItems
+{
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    
+    NSString *sql = @"SELECT * FROM AccountItem";
+    FMResultSet* fs = [_db executeQuery:sql];
+    while ([fs next]) {
+        AccountItem *item = [[AccountItem alloc] init];
+        item.itemId = [fs stringForColumn:@"itemId"];
+        //item.avatar = [fs stringForColumn:<#(NSString *)#>]
+    }
+    return array;
+}
+
 - (void)deleteAccountItem:(NSString *)itemId
 {
     NSString *sql = [[NSString alloc] initWithFormat:@"DELETE FROM AccountItem WHERE itemId = '%@'", itemId];

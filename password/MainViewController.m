@@ -9,8 +9,9 @@
 #import "MainViewController.h"
 #import "LockViewController.h"
 #import "SettingViewController.h"
-#import "NewAccountViewController.h"
+#import "EditAccountViewController.h"
 #import "AccountSummaryCell.h"
+#import "AccountItem.h"
 
 @interface MainViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -18,12 +19,15 @@
 
 @end
 
-@implementation MainViewController
+@implementation MainViewController {
+    NSArray *_accountItems;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showPasswordView) name:@"SHOW_PASSWORD_VIEW" object:nil];
     }
     return self;
@@ -53,7 +57,7 @@
 
 - (void)addAccount
 {
-    NewAccountViewController *accountView = [[NewAccountViewController alloc] init];
+    EditAccountViewController *accountView = [[EditAccountViewController alloc] init];
     [self.navigationController pushViewController:accountView animated:YES];
 }
 
