@@ -10,6 +10,8 @@
 #import "ImageTextFieldCell.h"
 #import "LabelTextFieldCell.h"
 #import "LabelTextViewCell.h"
+#import "AccountItem.h"
+#import "KUnits.h"
 
 @interface NewAccountViewController () <UITableViewDelegate, UITableViewDataSource, UITextViewDelegate>
 
@@ -18,6 +20,7 @@
 @end
 
 @implementation NewAccountViewController {
+    NSString *_avatar;
     __weak UITextField *_name;
     __weak UITextField *_account;
     __weak UITextField *_password;
@@ -52,7 +55,18 @@
 
 - (void)save
 {
+    AccountItem *item = [[AccountItem alloc] init];
+    item.itemId = [KUnits generateUuidString];
+    item.name = _name.text;
+    item.avatar = _avatar;
+    item.account = _account.text;
+    item.password = _password.text;
+    item.url = _website.text;
+    item.remark = _remark.text;
+    item.voices = nil;
+    item.pictures = nil;
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"newAccountItem" object:nil userInfo:@{@"item":item}];
 }
 
 #pragma mark --------- table view delegate -------------
@@ -119,6 +133,7 @@
             [tableView registerNib:[UINib nibWithNibName:@"ImageTextFieldCell" bundle:nil] forCellReuseIdentifier:cellIdentify];
             cell = [tableView dequeueReusableCellWithIdentifier:cellIdentify];
         }
+        _name = cell.nameTextField;
         [cell setKeyboardCompletion:^{[_account becomeFirstResponder];}];
         return cell;
     }
