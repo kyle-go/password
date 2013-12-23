@@ -19,8 +19,6 @@
 		2739E70E185E17820062AAF5 /* ImageTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2739E70D185E17820062AAF5 /* ImageTextFieldCell.xib */; };
 		2739E710185E17990062AAF5 /* LabelTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2739E70F185E17990062AAF5 /* LabelTextFieldCell.xib */; };
 		2739E713185E17AD0062AAF5 /* LabelTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2739E712185E17AD0062AAF5 /* LabelTextFieldCell.m */; };
-		27535E8D18654CB60079513C /* LabelTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 27535E8C18654CB60079513C /* LabelTextViewCell.m */; };
-		27535E8F18654CC60079513C /* LabelTextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27535E8E18654CC60079513C /* LabelTextViewCell.xib */; };
 		2756A32F1865ED370030941C /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2756A3261865ED370030941C /* FMDatabase.m */; };
 		2756A3301865ED370030941C /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2756A3281865ED370030941C /* FMDatabaseAdditions.m */; };
 		2756A3311865ED370030941C /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2756A32A1865ED370030941C /* FMDatabasePool.m */; };
@@ -67,6 +65,8 @@
 		FB87CC24185590F1003D6602 /* LockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB87CC22185590F1003D6602 /* LockViewController.m */; };
 		FB87CC25185590F1003D6602 /* LockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB87CC23185590F1003D6602 /* LockViewController.xib */; };
 		FB87CC2A18559376003D6602 /* lockBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = FB87CC2918559376003D6602 /* lockBackground.png */; };
+		FBA6CDD9186856D600DE26BB /* RemarkTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA6CDD7186856D600DE26BB /* RemarkTextViewController.m */; };
+		FBA6CDDA186856D600DE26BB /* RemarkTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBA6CDD8186856D600DE26BB /* RemarkTextViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,9 +98,6 @@
 		2739E70F185E17990062AAF5 /* LabelTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelTextFieldCell.xib; sourceTree = "<group>"; };
 		2739E711185E17AD0062AAF5 /* LabelTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelTextFieldCell.h; sourceTree = "<group>"; };
 		2739E712185E17AD0062AAF5 /* LabelTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelTextFieldCell.m; sourceTree = "<group>"; };
-		27535E8B18654CB60079513C /* LabelTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelTextViewCell.h; sourceTree = "<group>"; };
-		27535E8C18654CB60079513C /* LabelTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelTextViewCell.m; sourceTree = "<group>"; };
-		27535E8E18654CC60079513C /* LabelTextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelTextViewCell.xib; sourceTree = "<group>"; };
 		2756A3251865ED370030941C /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		2756A3261865ED370030941C /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		2756A3271865ED370030941C /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -180,6 +177,9 @@
 		FB87CC22185590F1003D6602 /* LockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LockViewController.m; sourceTree = "<group>"; };
 		FB87CC23185590F1003D6602 /* LockViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LockViewController.xib; sourceTree = "<group>"; };
 		FB87CC2918559376003D6602 /* lockBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lockBackground.png; sourceTree = "<group>"; };
+		FBA6CDD6186856D600DE26BB /* RemarkTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemarkTextViewController.h; sourceTree = "<group>"; };
+		FBA6CDD7186856D600DE26BB /* RemarkTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemarkTextViewController.m; sourceTree = "<group>"; };
+		FBA6CDD8186856D600DE26BB /* RemarkTextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemarkTextViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +244,9 @@
 				2739E705185E10E40062AAF5 /* EditAccountViewController.h */,
 				2739E706185E10E40062AAF5 /* EditAccountViewController.m */,
 				2739E707185E10E40062AAF5 /* EditAccountViewController.xib */,
+				FBA6CDD6186856D600DE26BB /* RemarkTextViewController.h */,
+				FBA6CDD7186856D600DE26BB /* RemarkTextViewController.m */,
+				FBA6CDD8186856D600DE26BB /* RemarkTextViewController.xib */,
 				2739E6FE185E0C920062AAF5 /* AccountSummaryCell.h */,
 				2739E6FF185E0C920062AAF5 /* AccountSummaryCell.m */,
 				2739E701185E0CA10062AAF5 /* AccountSummaryCell.xib */,
@@ -253,9 +256,6 @@
 				2739E711185E17AD0062AAF5 /* LabelTextFieldCell.h */,
 				2739E712185E17AD0062AAF5 /* LabelTextFieldCell.m */,
 				2739E70F185E17990062AAF5 /* LabelTextFieldCell.xib */,
-				27535E8B18654CB60079513C /* LabelTextViewCell.h */,
-				27535E8C18654CB60079513C /* LabelTextViewCell.m */,
-				27535E8E18654CC60079513C /* LabelTextViewCell.xib */,
 			);
 			name = VCs;
 			sourceTree = "<group>";
@@ -531,6 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2739E704185E0F1B0062AAF5 /* avatar.png in Resources */,
+				FBA6CDDA186856D600DE26BB /* RemarkTextViewController.xib in Resources */,
 				FB1B89561868224C0096B400 /* share_platform_TencentWeibo@2x.png in Resources */,
 				FB87CBDD18557286003D6602 /* InfoPlist.strings in Resources */,
 				2739E702185E0CA10062AAF5 /* AccountSummaryCell.xib in Resources */,
@@ -538,7 +539,6 @@
 				FB1B89551868224C0096B400 /* share_platform_sina@2x.png in Resources */,
 				FB87CC05185572EE003D6602 /* MainViewController.xib in Resources */,
 				FB87CBE518557286003D6602 /* Images.xcassets in Resources */,
-				27535E8F18654CC60079513C /* LabelTextViewCell.xib in Resources */,
 				FB87CC2A18559376003D6602 /* lockBackground.png in Resources */,
 				2739E70E185E17820062AAF5 /* ImageTextFieldCell.xib in Resources */,
 				FB1B89581868224C0096B400 /* share_platform_wechattimeline@2x.png in Resources */,
@@ -572,7 +572,6 @@
 				FB1B89491868224C0096B400 /* UIImage+Compress.m in Sources */,
 				FB87CBDF18557286003D6602 /* main.m in Sources */,
 				2756A3301865ED370030941C /* FMDatabaseAdditions.m in Sources */,
-				27535E8D18654CB60079513C /* LabelTextViewCell.m in Sources */,
 				FB1B89501868224C0096B400 /* KWeiboOauthView.m in Sources */,
 				FB87CC1F18559009003D6602 /* SPLockOverlay.m in Sources */,
 				2739E6F7185E0A230062AAF5 /* SettingViewController.m in Sources */,
@@ -583,6 +582,7 @@
 				2756A3321865ED370030941C /* FMDatabaseQueue.m in Sources */,
 				2739E708185E10E40062AAF5 /* EditAccountViewController.m in Sources */,
 				2739E70C185E17700062AAF5 /* ImageTextFieldCell.m in Sources */,
+				FBA6CDD9186856D600DE26BB /* RemarkTextViewController.m in Sources */,
 				FB87CC2018559009003D6602 /* SPLockScreen.m in Sources */,
 				2739E700185E0C920062AAF5 /* AccountSummaryCell.m in Sources */,
 				2756A3331865ED370030941C /* FMResultSet.m in Sources */,

@@ -9,7 +9,7 @@
 #import "EditAccountViewController.h"
 #import "ImageTextFieldCell.h"
 #import "LabelTextFieldCell.h"
-#import "LabelTextViewCell.h"
+#import "RemarkTextViewController.h"
 #import "AccountItem.h"
 #import "KUnits.h"
 
@@ -224,6 +224,26 @@
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //备注信息
+    if (indexPath.section == 1) {
+        switch (indexPath.row ) {
+            case 0:
+                //文本
+            {
+                RemarkTextViewController *remarkView = [[RemarkTextViewController alloc] init];
+                 [self.navigationController pushViewController:remarkView animated:YES];
+            }
+                break;
+            case 1:
+                //图片
+                break;
+            case 2:
+                //语音
+                break;
+            default:
+                break;
+        }
+    }
     return nil;
 }
 
