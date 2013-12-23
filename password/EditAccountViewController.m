@@ -10,6 +10,7 @@
 #import "ImageTextFieldCell.h"
 #import "LabelTextFieldCell.h"
 #import "RemarkTextViewController.h"
+#import "PicturesImageViewController.h"
 #import "AccountItem.h"
 #import "KUnits.h"
 
@@ -213,15 +214,6 @@
                 break;
         }
         return cell;
-//        NSString *cellIdentify = @"LabelTextViewCellIdentify";
-//        LabelTextViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentify];
-//        if (!cell) {
-//            [tableView registerNib:[UINib nibWithNibName:@"LabelTextViewCell" bundle:nil] forCellReuseIdentifier:cellIdentify];
-//            cell = [tableView dequeueReusableCellWithIdentifier:cellIdentify];
-//        }
-//        _remark = cell.placeholderTextView;
-//        cell.placeholderTextView.delegate = self;
-//        cell.placeholderTextView.placeholder = @"备注信息";
     }
     
     //头像，名称
@@ -289,6 +281,10 @@
             }
                 break;
             case 1:
+            {
+                PicturesImageViewController *pics = [[PicturesImageViewController alloc] init];
+                [self.navigationController pushViewController:pics animated:YES];
+            }
                 //图片
                 break;
             case 2:
