@@ -14,7 +14,7 @@
 #import "AccountItem.h"
 #import "KUnits.h"
 
-@interface EditAccountViewController () <UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, RemarkTextViewDelegate>
+@interface EditAccountViewController () <UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, RemarkTextViewDelegate, PicturesImageViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -84,7 +84,7 @@
     item.password = _password.text;
     item.url = _website.text;
     item.remark = _remark.text;
-    item.voices = nil;
+    item.voice = nil;
     item.pictures = nil;
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"EditAccountItem" object:nil userInfo:@{@"item":item}];
@@ -205,7 +205,14 @@
                 
                 break;
             case 1:
-                cell.textLabel.text = @"添加图片";
+                if (_accountItem.pictures.count) {
+                    cell.textLabel.text = @"图片备注";
+                    //for (UIImageView *view in _accountItem.pictures) {
+                    //    view.frame = CGRectMake(, , , )
+                    //}
+                } else {
+                    cell.textLabel.text = @"添加图片";
+                }
                 break;
             case 2:
                 cell.textLabel.text = @"添加语音";
@@ -368,6 +375,13 @@
 #pragma remark --- RemarkTextViewDelegate -----
 - (void)remarkText:(NSString *)text {
     _accountItem.remark = text;
+    [self.tableView reloadData];
+}
+
+#pragma remark --- PicturesImageViewDelegate ----
+- (void)picturesImage:(NSArray *)images
+{
+    _accountItem.pictures = images;
     [self.tableView reloadData];
 }
 

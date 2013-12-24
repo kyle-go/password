@@ -17,7 +17,7 @@
 @property (strong, nonatomic) NSString *password;
 @property (strong, nonatomic) NSString *url;
 @property (strong, nonatomic) NSString *remark;
-@property (strong, nonatomic) NSString *voices;
-@property (strong, nonatomic) NSString *pictures;
+@property (strong, nonatomic) NSString *voice;
+@property (strong, nonatomic) NSArray  *pictures;
 
 @end

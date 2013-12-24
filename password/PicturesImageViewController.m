@@ -32,6 +32,8 @@
     [super viewDidLoad];
     self.title = @"图片备注";
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonSystemItemAction target:self action:@selector(save)];
+    
     int iIndex = 0;
     for (UIImage *image in self.pictures) {
         //只处理前3个
@@ -68,6 +70,12 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+- (void)save
+{
+    [self.delegate picturesImage:imageViews];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)addImageTap:(UIGestureRecognizer *)gestureRecognizer

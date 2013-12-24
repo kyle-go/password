@@ -45,7 +45,7 @@
         }
         
         //create AccountItem table
-        NSString * sql = @"CREATE TABLE IF NOT EXISTS 'AccountItem' ('id' INTEGER PRIMARY KEY AUTOINCREMENT  NOT NULL, 'itemId' VARCHAR(40), 'name' VARCHAR(64), 'avatar' VARCHAR(260), 'account' VARCHAR(64), 'password' VARCHAR(32), 'url' VARCHAR(260), 'remark' VARCHAR(260), 'voices' VARCHAR(260), 'pictures' VARCHAR(260))";
+        NSString * sql = @"CREATE TABLE IF NOT EXISTS 'AccountItem' ('id' INTEGER PRIMARY KEY AUTOINCREMENT  NOT NULL, 'itemId' VARCHAR(40), 'name' VARCHAR(64), 'avatar' VARCHAR(260), 'account' VARCHAR(64), 'password' VARCHAR(32), 'url' VARCHAR(260), 'remark' VARCHAR(260), 'voice' VARCHAR(260), 'pictures' VARCHAR(260))";
         if (![_db executeUpdate:sql]) {
             debugLog(@"create Item table failed. error=%@", [_db lastError]);
         } else {
@@ -86,7 +86,7 @@
     //delete old item
     [self deleteAccountItem:item.itemId];
     
-    NSString *sql = @"INSERT INTO AccountItem (itemId, name, avatar, account, password, url, remark, voices, pictures) values (?,?,?,?,?,?,?,?,?)";
+    NSString *sql = @"INSERT INTO AccountItem (itemId, name, avatar, account, password, url, remark, voice, pictures) values (?,?,?,?,?,?,?,?,?)";
     BOOL res = [_db executeUpdate:sql,
                 item.itemId,
                 item.name,
@@ -95,7 +95,7 @@
                 item.password,
                 item.url,
                 item.remark,
-                item.voices,
+                item.voice,
                 item.pictures];
     
     if (!res) {

@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol PicturesImageViewDelegate <NSObject>
+
+- (void)picturesImage:(NSArray *)images;
+
+@end
+
 @interface PicturesImageViewController : UIViewController
 
+@property (nonatomic, strong) id<PicturesImageViewDelegate> delegate;
 @property (nonatomic, strong) NSArray *pictures;
 
 @end
