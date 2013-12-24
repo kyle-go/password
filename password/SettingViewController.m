@@ -36,7 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.title = @"设置";
     self.tableView.separatorColor = globalBackgroundColor;
     self.tableView.backgroundColor = globalBackgroundColor;
 }
@@ -44,7 +44,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark --------- table view delegate -------------

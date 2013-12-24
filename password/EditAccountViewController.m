@@ -315,7 +315,7 @@
                                   delegate:self
                                   cancelButtonTitle:@"取消"
                                   destructiveButtonTitle:nil
-                                  otherButtonTitles:@"拍照", @"选择本地图片", nil];
+                                  otherButtonTitles:@"拍照", @"本地图片", nil];
     
     [actionSheet showInView:self.view];
 }

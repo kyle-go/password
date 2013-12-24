@@ -68,6 +68,7 @@
 		FB87CC24185590F1003D6602 /* LockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB87CC22185590F1003D6602 /* LockViewController.m */; };
 		FB87CC25185590F1003D6602 /* LockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB87CC23185590F1003D6602 /* LockViewController.xib */; };
 		FB87CC2A18559376003D6602 /* lockBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = FB87CC2918559376003D6602 /* lockBackground.png */; };
+		FB9279A71869396F005CE0E9 /* EnlargeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9279A61869396F005CE0E9 /* EnlargeImageView.m */; };
 		FBA6CDD9186856D600DE26BB /* RemarkTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA6CDD7186856D600DE26BB /* RemarkTextViewController.m */; };
 		FBA6CDDA186856D600DE26BB /* RemarkTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBA6CDD8186856D600DE26BB /* RemarkTextViewController.xib */; };
 /* End PBXBuildFile section */
@@ -184,6 +185,8 @@
 		FB87CC22185590F1003D6602 /* LockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LockViewController.m; sourceTree = "<group>"; };
 		FB87CC23185590F1003D6602 /* LockViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LockViewController.xib; sourceTree = "<group>"; };
 		FB87CC2918559376003D6602 /* lockBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lockBackground.png; sourceTree = "<group>"; };
+		FB9279A51869396F005CE0E9 /* EnlargeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnlargeImageView.h; sourceTree = "<group>"; };
+		FB9279A61869396F005CE0E9 /* EnlargeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnlargeImageView.m; sourceTree = "<group>"; };
 		FBA6CDD6186856D600DE26BB /* RemarkTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemarkTextViewController.h; sourceTree = "<group>"; };
 		FBA6CDD7186856D600DE26BB /* RemarkTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemarkTextViewController.m; sourceTree = "<group>"; };
 		FBA6CDD8186856D600DE26BB /* RemarkTextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemarkTextViewController.xib; sourceTree = "<group>"; };
@@ -431,6 +434,7 @@
 		FB87CC1318558FD9003D6602 /* extern */ = {
 			isa = PBXGroup;
 			children = (
+				FB9279A41869396F005CE0E9 /* EnlargeImageView */,
 				FB1B891E1868224C0096B400 /* KSharedSDK */,
 				2756A3241865ED370030941C /* fmdb */,
 				271C9DA4186553F300DB39C7 /* KTextViewPlaceholder */,
@@ -464,6 +468,16 @@
 				FB87CC2918559376003D6602 /* lockBackground.png */,
 			);
 			name = resource;
+			sourceTree = "<group>";
+		};
+		FB9279A41869396F005CE0E9 /* EnlargeImageView */ = {
+			isa = PBXGroup;
+			children = (
+				FB9279A51869396F005CE0E9 /* EnlargeImageView.h */,
+				FB9279A61869396F005CE0E9 /* EnlargeImageView.m */,
+			);
+			name = EnlargeImageView;
+			path = password/EnlargeImageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -612,6 +626,7 @@
 				FB87CC24185590F1003D6602 /* LockViewController.m in Sources */,
 				FB1B89471868224C0096B400 /* KHttpManager.m in Sources */,
 				2756A32F1865ED370030941C /* FMDatabase.m in Sources */,
+				FB9279A71869396F005CE0E9 /* EnlargeImageView.m in Sources */,
 				2767199D1866154100867197 /* Storage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
