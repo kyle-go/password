@@ -295,6 +295,14 @@
                 //图片
                 break;
             case 2:
+                //还是另外弹一个框比较好
+                //播放语音
+                if (_accountItem.voice.length) {
+                
+                //长按录音
+                } else {
+                    
+                }
                 //语音
                 break;
             default:

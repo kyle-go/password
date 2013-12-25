@@ -71,6 +71,8 @@
 		FB9279A71869396F005CE0E9 /* EnlargeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9279A61869396F005CE0E9 /* EnlargeImageView.m */; };
 		FBA6CDD9186856D600DE26BB /* RemarkTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA6CDD7186856D600DE26BB /* RemarkTextViewController.m */; };
 		FBA6CDDA186856D600DE26BB /* RemarkTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBA6CDD8186856D600DE26BB /* RemarkTextViewController.xib */; };
+		FBFB2839186B1AF900475A01 /* KVoiceHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFB2837186B1AF900475A01 /* KVoiceHUD.m */; };
+		FBFB283A186B1AF900475A01 /* micro.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFB2838186B1AF900475A01 /* micro.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,6 +192,9 @@
 		FBA6CDD6186856D600DE26BB /* RemarkTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemarkTextViewController.h; sourceTree = "<group>"; };
 		FBA6CDD7186856D600DE26BB /* RemarkTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemarkTextViewController.m; sourceTree = "<group>"; };
 		FBA6CDD8186856D600DE26BB /* RemarkTextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RemarkTextViewController.xib; sourceTree = "<group>"; };
+		FBFB2836186B1AF900475A01 /* KVoiceHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVoiceHUD.h; sourceTree = "<group>"; };
+		FBFB2837186B1AF900475A01 /* KVoiceHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVoiceHUD.m; sourceTree = "<group>"; };
+		FBFB2838186B1AF900475A01 /* micro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = micro.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -434,6 +439,7 @@
 		FB87CC1318558FD9003D6602 /* extern */ = {
 			isa = PBXGroup;
 			children = (
+				FBFB2835186B1AF900475A01 /* KVoiceHUD */,
 				FB9279A41869396F005CE0E9 /* EnlargeImageView */,
 				FB1B891E1868224C0096B400 /* KSharedSDK */,
 				2756A3241865ED370030941C /* fmdb */,
@@ -478,6 +484,16 @@
 			);
 			name = EnlargeImageView;
 			path = password/EnlargeImageView;
+			sourceTree = "<group>";
+		};
+		FBFB2835186B1AF900475A01 /* KVoiceHUD */ = {
+			isa = PBXGroup;
+			children = (
+				FBFB2836186B1AF900475A01 /* KVoiceHUD.h */,
+				FBFB2837186B1AF900475A01 /* KVoiceHUD.m */,
+				FBFB2838186B1AF900475A01 /* micro.png */,
+			);
+			path = KVoiceHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -561,6 +577,7 @@
 				FB87CBDD18557286003D6602 /* InfoPlist.strings in Resources */,
 				2739E702185E0CA10062AAF5 /* AccountSummaryCell.xib in Resources */,
 				2739E6F8185E0A230062AAF5 /* SettingViewController.xib in Resources */,
+				FBFB283A186B1AF900475A01 /* micro.png in Resources */,
 				FB1B89551868224C0096B400 /* share_platform_sina@2x.png in Resources */,
 				FB87CC05185572EE003D6602 /* MainViewController.xib in Resources */,
 				FB87CBE518557286003D6602 /* Images.xcassets in Resources */,
@@ -627,6 +644,7 @@
 				FB1B89471868224C0096B400 /* KHttpManager.m in Sources */,
 				2756A32F1865ED370030941C /* FMDatabase.m in Sources */,
 				FB9279A71869396F005CE0E9 /* EnlargeImageView.m in Sources */,
+				FBFB2839186B1AF900475A01 /* KVoiceHUD.m in Sources */,
 				2767199D1866154100867197 /* Storage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
