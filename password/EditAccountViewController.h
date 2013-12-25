@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-/*
- broadcast "newAccountItem"
- */
-@interface NewAccountViewController : UIViewController
+#import "AccountItem.h"
+
+@interface EditAccountViewController : UIViewController
+
+- (void)EditAccountItem:(AccountItem *)item;
 
 @end
