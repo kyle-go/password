@@ -181,7 +181,16 @@
         switch (indexPath.row) {
             case 0:
                 if (_accountItem.remark.length == 0) {
-                    cell.textLabel.text = @"添加文本";
+                    cell.accessoryType = UITableViewCellAccessoryNone;
+                    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(20, 6, 280, 45)];
+                    btn.backgroundColor = globalGreenButtonColor;
+                    [btn setTitle:@"添加文本" forState:UIControlStateNormal];
+                    [btn setTitleColor:[UIColor colorWithWhite:1.0 alpha:0.5] forState:UIControlStateHighlighted];
+                    [btn addTarget:self action:@selector(addText) forControlEvents:UIControlEventTouchUpInside];
+                    
+                    [cell.contentView addSubview:btn];
+                    cell.backgroundColor = globalBackgroundColor;
+                    ///@"添加文本";
                 } else {
                     cell.textLabel.text = nil;
                     if ([cell.contentView viewWithTag:'mark']) {
@@ -211,11 +220,29 @@
                     //    view.frame = CGRectMake(, , , )
                     //}
                 } else {
-                    cell.textLabel.text = @"添加图片";
+                    cell.accessoryType = UITableViewCellAccessoryNone;
+                    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(20, 6, 280, 45)];
+                    btn.backgroundColor = globalGreenButtonColor;
+                    [btn setTitle:@"添加图片" forState:UIControlStateNormal];
+                    [btn setTitleColor:[UIColor colorWithWhite:1.0 alpha:0.5] forState:UIControlStateHighlighted];
+                    [btn addTarget:self action:@selector(addImage) forControlEvents:UIControlEventTouchUpInside];
+                    
+                    [cell.contentView addSubview:btn];
+                    cell.backgroundColor = globalBackgroundColor;
                 }
                 break;
             case 2:
-                cell.textLabel.text = @"添加语音";
+            {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+                UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(20, 6, 280, 45)];
+                btn.backgroundColor = globalGreenButtonColor;
+                [btn setTitle:@"添加语音" forState:UIControlStateNormal];
+                [btn setTitleColor:[UIColor colorWithWhite:1.0 alpha:0.5] forState:UIControlStateHighlighted];
+                [btn addTarget:self action:@selector(addVoice) forControlEvents:UIControlEventTouchUpInside];
+                
+                [cell.contentView addSubview:btn];
+                cell.backgroundColor = globalBackgroundColor;
+            }
                 break;
             default:
                 break;
