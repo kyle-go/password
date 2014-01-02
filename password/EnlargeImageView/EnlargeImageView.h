@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EnlargeImageView : UIScrollView
+@interface EnlargeImageView : UIScrollView <UIScrollViewDelegate>
 
 //显示图像大图
 -(void)showImage:(UIImage*)image inView:(UIView*)parentsView fromRect:(CGRect)rect;

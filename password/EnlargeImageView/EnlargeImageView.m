@@ -17,10 +17,9 @@
 @end
 
 @implementation EnlargeImageView {
-    CGFloat _oldImageWidth;
-    CGFloat _oldImageHeight;
     CGFloat _imageHWScale;
     CGRect _oldRect;
+    CGFloat _beganScale;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -76,51 +75,61 @@
 //缩放图片
 -(void)handleViewPinch:(UIPinchGestureRecognizer *)sender
 {
-    CGPoint oldGesturePoint;
+    
     UIImageView *imageView = (UIImageView *)[self viewWithTag:'show'];
     if ([sender state] == UIGestureRecognizerStateBegan) {
-        if (_oldImageWidth == 0) {
-            _oldImageWidth = PHOTOWIDTH;
-        }
-        if (_oldImageHeight == 0) {
-            _oldImageHeight = (imageView.image.size.height/imageView.image.size.width)*PHOTOWIDTH;
-        }
-        oldGesturePoint = [sender locationInView:self];
+        _imageHWScale = imageView.image.size.height/imageView.image.size.width;
+        _beganScale = self.zoomScale;
     }
     
-    CGRect frame = imageView.frame;
-    frame.size.width = _oldImageWidth * sender.scale;
-    frame.size.height = _oldImageHeight * sender.scale;
-    imageView.frame = frame;
-    
-    self.contentSize = CGSizeMake(imageView.frame.size.width, imageView.frame.size.height);
-    //imageView.center = CGPointMake(imageView.center.x/2 - (sender.scale-1)*oldGesturePoint.x/2, imageView.center.y/2 - (sender.scale-1)*oldGesturePoint.y/2);
-    
-    NSLog(@"@@@@point = x=%f y=%f", imageView.center.x, imageView.center.y);
-    
-    CGPoint centerPoint = CGPointMake(self.contentSize.width/2, self.contentSize.height/2);;
-    if (imageView.frame.size.width < PHOTOWIDTH) {
-        centerPoint.x = PHOTOWIDTH/2;
-    }
-//    else {
-//        centerPoint.x = self.contentSize.width/2 - (sender.scale-1)*oldGesturePoint.x/2;
-//    }
-    if (imageView.frame.size.height < PHOTOHEIGHT) {
-        centerPoint.y = PHOTOHEIGHT/2;
-    }
-//    else {
-//        centerPoint.y = self.contentSize.height/2 - (sender.scale-1)*oldGesturePoint.y/2;
-//    }
-    imageView.center = centerPoint;
+    [self setZoomScale:_beganScale * sender.scale];
     
     if ([sender state] == UIGestureRecognizerStateEnded) {
-        if (imageView.frame.size.width < PHOTOWIDTH) {
-            [UIView animateWithDuration:0.5f animations:^{
-                imageView.frame = CGRectMake(0, (PHOTOHEIGHT - _imageHWScale*PHOTOWIDTH)/2.0, PHOTOWIDTH, PHOTOWIDTH * _imageHWScale);
-            }];
+        if (self.zoomScale < 1.0) {
+            [self setZoomScale:1.0 animated:YES];
+            self.contentOffset = CGPointMake(0, 0);
+        } else if (self.zoomScale > 3.0) {
+            [self setZoomScale:3.0 animated:YES];
         }
-        _oldImageWidth = imageView.frame.size.width;
-        _oldImageHeight = imageView.frame.size.height;
+    }
+}
+
+#pragma mark - ScrollView delegate
+-(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    for (UIView *v in scrollView.subviews){
+        return v;
+    }
+    
+    return nil;
+}
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    //
+}
+
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view
+{
+    //
+}
+
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale
+{
+    if (self.zoomScale < 1.0) {
+        [self setZoomScale:1.0 animated:YES];
+        self.contentOffset = CGPointMake(0, 0);
+    } else if (self.zoomScale > 3.0) {
+        [self setZoomScale:3.0 animated:YES];
+    }
+}
+
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView
+{
+    UIImageView *imageView = (UIImageView *)[self viewWithTag:'show'];
+    _imageHWScale = imageView.image.size.height/imageView.image.size.width;
+    if (self.contentOffset.x<=0 && self.contentOffset.y<=0) {
+        self.contentOffset = CGPointMake((imageView.image.size.width - PHOTOWIDTH)/2, (imageView.image.size.width - PHOTOWIDTH)* _imageHWScale);
     }
 }
 
