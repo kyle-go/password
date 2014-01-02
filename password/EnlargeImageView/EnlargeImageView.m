@@ -129,7 +129,7 @@
     UIImageView *imageView = (UIImageView *)[self viewWithTag:'show'];
     _imageHWScale = imageView.image.size.height/imageView.image.size.width;
     if (self.contentOffset.x<=0 && self.contentOffset.y<=0) {
-        self.contentOffset = CGPointMake((imageView.image.size.width - PHOTOWIDTH)/2, (imageView.image.size.width - PHOTOWIDTH)* _imageHWScale);
+        self.contentOffset = CGPointMake((imageView.image.size.width - PHOTOWIDTH)/2, imageView.image.size.width - PHOTOWIDTH);
     }
 }
 
